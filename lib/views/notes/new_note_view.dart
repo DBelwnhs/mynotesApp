@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mynotes/services/auth/auth_service.dart';
-import 'package:mynotes/services/auth/crud/notes_services.dart';
+import 'package:mynotes/services/auth/crud/notes_service.dart';
 
 class NewNoteView extends StatefulWidget {
   const NewNoteView({Key? key}) : super(key: key);
@@ -38,7 +38,7 @@ class _NewNoteViewState extends State<NewNoteView> {
     _textController.addListener(_textControllerListener);
   }
 
-  Future<DatabaseNote> createNewNote() async {
+  Future<DatabaseNote?> createNewNote() async {
     final existingNote = _note;
     if (existingNote != null) {
       return existingNote;
